@@ -1,0 +1,24 @@
+{
+  "name": "dynamic-nft-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevvKo/dynamic-nft-example.git"
+  },
+  "author": "Kevin Klein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevvKo/dynamic-nft-example/issues"
+  },
+  "homepage": "https://github.com/KevvKo/dynamic-nft-example#readme"
+}

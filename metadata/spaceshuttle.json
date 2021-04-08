@@ -1,0 +1,27 @@
+{
+    "name": "The Spaceshuttle",
+    "description": "A small PNG from a spaceshuttle. This PNG is a playable character in a browser game.",
+    "image": "",
+    "attributes": [
+        {   
+            "trait_type": "width",
+            "value": 0
+        },
+        {   
+            "trait_type": "height",
+            "value": 0
+        },
+        {   
+            "trait_type": "createdAt",
+            "value": ""
+        },
+        {   
+            "trait_type": "format",
+            "value": ""
+        },
+        {   
+            "trait_type": "url",
+            "value": ""
+        }
+    ]
+}

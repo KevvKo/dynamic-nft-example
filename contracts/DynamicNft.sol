@@ -55,8 +55,8 @@ contract DynamicNft is ERC721, VRFConsumerBase, Ownable {
         );
     }
 
-    function requestRandomId(uint256 userProvidedSeed) public returns(bytes32 requestId){
-        require(LINK.balanceOf(address(this)), "Transaction failed - out of LINK!");
+    function requestRandomId(uint256 userProvidedSeed) public returns(bytes32){
+        require(LINK.balanceOf(address(this)) >= fee, "Transaction failed - out of LINK!");
         bytes32 requestId = requestRandomness(keyhash, fee, userProvidedSeed);
         return requestId;
     }

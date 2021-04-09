@@ -16,8 +16,7 @@ contract DynamicNft is ERC721, VRFConsumerBase, Ownable {
     uint256 public randomResult;
     address public VRFCoordinator;
     address public LINKToken;
-    string requestToSender;
-    string requestToTokenId;
+    uint256 tokenId;
 
     struct Spaceship {
         uint8 width;
@@ -56,11 +55,17 @@ contract DynamicNft is ERC721, VRFConsumerBase, Ownable {
         );
     }
 
+    function requestRandomId(uint256 userProvidedSeed) public returns(bytes32 requestId){
+        require(LINK.balanceOf(address(this)), "Transaction failed - out of LINK!");
+        bytes32 requestId = requestRandomness(keyhash, fee, userProvidedSeed);
+        return requestId;
+    }
+
     function fulfillRandomness(bytes32 requestId, uint256 randomNumber)
         internal
-        override
-    {
+        override    {
 
+            tokenId = randomNumber;
     }
 
     function getWidth() public view returns (uint8){

@@ -13,7 +13,7 @@ contract DynamicNft is ERC721, VRFConsumerBase, Ownable {
 
     bytes32 internal keyhash;
     uint256 internal fee;
-    uint256 public randomNumber;
+    uint256 public randomResult;
     address public VRFCoordinator;
     address public LINKToken;
     string requestToSender;
@@ -29,9 +29,9 @@ contract DynamicNft is ERC721, VRFConsumerBase, Ownable {
 
     Spaceship public spaceship;
 
-    constructor(address _VRFCoordinator, address _LINKToken, uint256 _keyhash) 
+    constructor(address _VRFCoordinator, address _LINKToken, bytes32 _keyhash) 
     public
-    VRFCoordinator(_VRFCoordinator, _LINKToken)
+    VRFConsumerBase(_VRFCoordinator, _LINKToken)
     ERC721("DynamicNFT", "SPS"){
 
         VRFCoordinator = _VRFCoordinator;
@@ -40,7 +40,13 @@ contract DynamicNft is ERC721, VRFConsumerBase, Ownable {
         fee = 0.1 * 10**18;
     }
 
-    function getSpaceshipOverview() public returns ( uint8, uint8, string, string, string){
+    function getSpaceshipOverview() public view returns ( 
+        uint8, 
+        uint8, 
+        string memory, 
+        string memory, 
+        string memory){
+
         return (
             spaceship.width,
             spaceship.height,
@@ -50,23 +56,30 @@ contract DynamicNft is ERC721, VRFConsumerBase, Ownable {
         );
     }
 
-    function getWidth() public returns (int8){
+    function fulfillRandomness(bytes32 requestId, uint256 randomNumber)
+        internal
+        override
+    {
+
+    }
+
+    function getWidth() public view returns (uint8){
         return spaceship.width;
     }
 
-    function getHeight() public returns (int8){
+    function getHeight() public view returns (uint8){
         return spaceship.height;
     }
 
-    function getCreationTime() public returns (int8){
+    function getCreationTime() public view returns (string memory){
         return spaceship.createdAt;
     }
 
-    function getFormat() public returns (int8){
+    function getFormat() public view returns (string memory){
         return spaceship.format;
     }
 
-    function getSourcUrl() public returns (int8){
+    function getSourcUrl() public view returns (string memory){
         return spaceship.url;
     }
 }

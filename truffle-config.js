@@ -3,13 +3,13 @@ const HDWalletProvider = require("@truffle/hdwallet-provider");
 const { API_URL, PRIVATE_KEY } = process.env;
 
 const fs = require('fs');
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+// const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   compilers: {
     solc: {
-     // version: "^0.6.6"
-    }
+      version: '^0.6.6',
+    },
   },
   networks: {
     development: {

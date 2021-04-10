@@ -18,5 +18,8 @@ module.exports = {
       },
       network_id: 42,
     }
-  }
+  },
+  plugins: [
+    'truffle-plugin-verify'
+  ]
 }

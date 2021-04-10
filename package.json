@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "truffle migrate --network kovan"
+    "deploy": "truffle migrate --network kovan",
+    "fund": "truffle exec scripts/fundContract.js --network kovan"
+
   },
   "repository": {
     "type": "git",

@@ -19,6 +19,9 @@ module.exports = {
       network_id: 42,
     }
   },
+  api_keys: {
+    etherscan: process.env.ETHERSCAN_API_KEY
+  },
   plugins: [
     'truffle-plugin-verify'
   ]

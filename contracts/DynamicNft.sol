@@ -17,6 +17,7 @@ contract DynamicNft is ERC721, VRFConsumerBase, Ownable {
     address public VRFCoordinator;
     address public LINKToken;
     uint256 tokenId;
+    string tokenUrl;
 
     struct Spaceship {
         uint8 width;
@@ -37,6 +38,7 @@ contract DynamicNft is ERC721, VRFConsumerBase, Ownable {
         LINKToken = _LINKToken;
         keyhash = _keyhash;
         fee = 0.1 * 10**18;
+        tokenUrl = "https://ipfs.io/ipfs/QmPNd7aoKneZWKZgT5LHkxdEdJssxJa9wRUMUwn13ed9Qy?filename=spaceshuttle.json";
     }
 
     function getSpaceshipOverview() public view returns ( 

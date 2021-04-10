@@ -8,9 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "truffle migrate --network kovan",
-    "fund": "truffle exec scripts/fundContract.js --network kovan"
-
+    "deploy": "truffle migrate --reset --network kovan",
+    "fund": "truffle exec scripts/fundContract.js --network kovan",
+    "verify": "truffle run verify DynamicNft --network kovan --license ISC"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,17 @@
     "@chainlink/contracts": "0.0.8",
     "@openzeppelin/contracts": "^3.1.0",
     "@truffle/hdwallet-provider": "^1.0.40",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "truffle-plugin-verify": "^0.5.7"
+  },
+  "devDependencies": {
+    "@chainlink/belt": "^0.0.1",
+    "@chainlink/test-helpers": "0.0.5",
+    "@openzeppelin/test-helpers": "^0.5.6",
+    "chai": "^4.2.0",
+    "depcheck": "^0.9.1",
+    "solhint": "^2.1.0",
+    "truffle": "^5.1.5",
+    "truffle-plugin-verify": "^0.5.7"
   }
 }

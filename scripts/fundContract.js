@@ -8,7 +8,7 @@ module.exports = async callback => {
     try {
 
         const sps = await DynamicNft.deployed()
-        const tokenAddress = await sps.LinkToken()
+        const tokenAddress = await sps.LINKToken()
 
         console.log(`The Token address is: ${tokenAddress}`)    
         const token = await LinkTokenInterface.at(tokenAddress)

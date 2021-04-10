@@ -1,7 +1,7 @@
 {
     "name": "The Spaceshuttle",
     "description": "A small PNG from a spaceshuttle. This PNG is a playable character in a browser game.",
-    "image": "",
+    "image": "https://ipfs.io/ipfs/QmPbQnW5Hj4yqrGJYdsCo5WKyZWWJG1NpeCU29GXnu6CQ9?filename=spaceship2.png",
     "attributes": [
         {   
             "trait_type": "width",
